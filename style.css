@@ -1,0 +1,202 @@
+body {
+  background: radial-gradient(circle at center, #1e1e2f, #111);
+  color: #fff;
+  font-family: "Segoe UI", sans-serif;
+  text-align: center;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 🔹 Хедер */
+header {
+  background: #151520;
+  padding: 15px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.nav {
+  display: flex;
+  gap: 30px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 18px;
+  border-radius: 8px;
+  transition: background 0.3s;
+  background: #26263a;
+}
+
+.nav a:hover {
+  background: #3b3b59;
+}
+
+/* Основная зона */
+h1 {
+  margin-top: 30px;
+}
+
+.game {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 70px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.player {
+  text-align: center;
+}
+
+.deck {
+  width: 200px;
+  height: 280px;
+  perspective: 1000px;
+  margin: 20px auto;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.card-inner.flip {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  box-sizing: border-box;
+}
+
+/* Рубашка */
+.card-back {
+  background: repeating-linear-gradient(
+    45deg,
+    #1c1c2b,
+    #1c1c2b 10px,
+    #2a2a45 10px,
+    #2a2a45 20px
+  );
+  color: #999;
+}
+
+.back-symbol {
+  font-size: 3em;
+}
+
+/* Лицевая сторона */
+.card-front {
+  background: #ffffff;
+  transform: rotateY(180deg);
+  color: #111;
+  font-size: 2.5em;
+  position: relative;
+}
+
+.card-front.red {
+  color: #d22;
+}
+
+.card-front.black {
+  color: #111;
+}
+
+.card-front .corner {
+  position: absolute;
+  font-size: 0.6em;
+  text-align: center;
+  line-height: 1em;
+}
+
+.card-front .top {
+  top: 10px;
+  left: 10px;
+}
+
+.card-front .bottom {
+  bottom: 10px;
+  right: 10px;
+  transform: rotate(180deg);
+}
+
+.card-front .center {
+  font-size: 2em;
+}
+
+button {
+  padding: 10px 18px;
+  font-size: 1em;
+  border: none;
+  border-radius: 8px;
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin: 4px;
+}
+
+button:hover {
+  background-color: #34ce57;
+}
+
+.result {
+  margin-top: 40px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+/* Контейнер, где карты будут ложиться в ряд */
+.deck {
+  display: flex;
+  gap: 12px; /* расстояние между картами */
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  flex-wrap: nowrap;
+}
+
+/* Каждая карта как отдельный элемент */
+.card-slot {
+  width: 120px;
+  height: 170px;
+  perspective: 1000px;
+  position: relative;
+}
+
+/* Внутри — блок с flip-анимацией */
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+  position: relative;
+}
+
+.card-inner.flip {
+  transform: rotateY(180deg);
+}

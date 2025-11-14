@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Блекджек — 2 карты каждому</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <nav class="nav">
+      <a href="index.html">2 игрока</a>
+      <a href="three.html">3 игрока</a>
+      <a href="four.html">4 игрока</a>
+      <a href="blackjack.html">Блекджек</a>
+    </nav>
+  </header>
+
+  <h1>Блекджек — каждому по 2 карты</h1>
+
+  <!-- 🔹 КНОПКА ЗАПУСКА -->
+  <button id="startBlackjack" style="margin-top:20px;">Начать игру</button>
+
+  <div class="game" id="blackjack-game"></div>
+
+  <div class="result" id="result"></div>
+
+  <script src="script.js"></script>
+
+  <script>
+    // Инициализация пустых игроков (без карт)
+    createBlackjackLayout(2);
+
+    // Запуск по кнопке
+    document.getElementById("startBlackjack").onclick = function() {
+      dealBlackjack(2);
+    }
+  </script>
+
+</body>
+</html>
